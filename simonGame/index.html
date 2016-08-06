@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Simon Says </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src= "app/src/controllers/simon.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="public/css/simon.css">
+</head>
+
+<body>
+  <div ng-app="gameApp" ng-controller="GameCtrl as game">
+    <div class="wrapper">
+    <h1> Simon Says Game </h1>
+      <div class="gameBoard">
+        <table id=display>
+          <tr>
+            <td></td>
+            <td>
+              <div class="simonButton" id="simonButton0" ng-click="playerActivate(0)" ng-disabled="buttonLock">   
+              </div> 
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <div class="simonButton" id="simonButton1" ng-click="playerActivate(1)" ng-disabled="buttonLock" >       
+                </div>
+              </td>
+              <td>
+                <div id="controlPanel"> 
+                    <br/>
+                    {{gameMessage}} </br>
+                    Strict Mode: {{strictMode}} | 
+                    <span class="stepDisplay">Step: {{stepCount}} </span> <br/>
+                    <table id="buttonPanel">
+                      <tr>
+                        <td> <button id="startButton" class="btn btn-success" ng-click="startGame()"> Start </button> </td>
+                        <td> <button id="strictToggle" class="btn btn-danger" ng-click="strictToggle()"> Strict </button> </td>
+                      </tr>
+                      <tr>
+                        <td> <button id="hintButton" class="btn btn-primary" ng-click="hint()" ng-disabled="buttonLock"> Hint </button> </td>
+                        <td> <button id="resetButton" class="btn btn-success"  ng-click="resetGame()"> Reset </button> </td>
+                      </tr>
+                    </table>
+                </div>
+              </td>
+              <td>
+                <div class="simonButton" id="simonButton2" ng-click="playerActivate(2)" ng-disabled="buttonLock">
+                </div>
+              </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div class="simonButton" div id="simonButton3" ng-click="playerActivate(3)" ng-disabled="buttonLock">
+              </div>
+            <td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+<html>

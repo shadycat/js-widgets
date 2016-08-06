@@ -1,0 +1,43 @@
+.wrapper {
+	background-color: white;
+	background-color: #006495;
+	display: inline-block;
+	height: 100vh;
+	width: 100%;
+	position: relative; 
+}
+
+.feed {
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: white;
+  background-color: #F4D00C;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+  margin: 0;
+	transform: translate(-50%);
+	text-align: center;
+}
+
+.icon {
+  border-radius: 50%;
+  border-radius: 2px solid;
+  border-color: white;
+}
+
+.streamPanel {
+	text-align: center;
+	border: solid;
+  border-radius: 25px;
+  padding: 20px;
+  overflow: hidden;
+  color: white;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+li {
+  list-style-type: none;
+}

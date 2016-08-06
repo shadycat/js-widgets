@@ -1,0 +1,63 @@
+body {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: black;
+}
+
+.timerShell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+
+  height: 50%;
+  width: 50%;
+  background-color: orange;
+  border: 5px solid;
+  border-radius: 25px;
+}
+
+.timerInternal {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+}
+
+.timeDisplay {
+  height: 20%;
+  width: 40%;
+  margin: 0 auto;
+  border: 5px solid;
+  border-radius: 50%;
+  border-color: white;
+  background: black;
+  color: green;
+}
+
+#customTime {
+  text-align: center;
+  background: black;
+  color: green;
+}
+
+.controlPanel {
+  margin-bottom: 5px;
+}
+
+.timerInterval .inputPanel {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+button {
+  margin-top: 5px;
+}

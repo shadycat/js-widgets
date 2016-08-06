@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Weather App </title>
+  <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src= "app/src/controllers/weather.js"></script>
+  <script src= "app/src/directives/weatherIcon.js"></script>
+  <script src= "app/src/factories/getWeather.js"></script>
+  <script src= "public/js/app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="public/css/weather.css">
+</head>
+
+<body>
+<div ng-app="weatherApp" ng-controller="WeatherCtrl as weather">
+  <div class="wrapper">
+    <div class="weatherBox">
+      <h1> Weather Report for {{location}} </h1>
+      <div class ="textbox">
+        Live View
+        <br/>
+        <weather-icon></weather-icon>
+        <br/>
+        Weather Status: {{status | uppercase}}
+        <br/>
+        Current Temperature: {{temp}} (That's Right, Kelvin)
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<html>

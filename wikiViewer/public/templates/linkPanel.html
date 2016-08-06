@@ -1,0 +1,13 @@
+<div class="container link-panel-container">
+  <div class="col-xs-12" data-ng-repeat="data in wikiData">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <label class="panel-title">{{ data.title }}</label>
+        </div>
+        <div  class="panel-body" data-ng-repeat="info in data">
+            <label> {{data.title}} </label>
+            <text> {{data.snippet}} </text>
+        </div>
+    </div>
+  </div>
+</div>

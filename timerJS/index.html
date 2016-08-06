@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Javascript Timer </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src= "app/src/controllers/timer.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/timer.css">
+</head>
+
+<body>
+
+<div ng-app="timerApp" ng-controller="TimerCtrl as timer">
+  <div class="wrapper">
+    <div class="timerShell">
+      <h1> Timer Application </h1>
+      <div class="timerInternal">
+        <div class="timeDisplay">
+          <h1>{{timeLeft}}</h1>
+        </div>
+        <div class="controlPanel">
+          <button class="btn btn-success" ng-click="startTime()" ng-disabled="buttonLock"> Start </button>
+          <button class="btn btn-danger" ng-click="stopCount()"> Stop </button>
+          <button class="btn btn-primary" ng-click="resetTimer()"> Reset </button>
+        </div>
+        <span class="inputPanel">
+          <input id="customTime" type="number" ng-model="customTime"
+          ng-init="customTime='Enter Custom Time'"
+          ng-click="customTime = null">
+          </br>
+          <button class="btn btn-info" ng-click="setTimer(customTime)"> Set Custom Time </button>
+        </span>
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+<html>

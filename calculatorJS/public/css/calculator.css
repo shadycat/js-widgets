@@ -1,0 +1,60 @@
+body {
+  background-color: black;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  background-color: orange;
+  height: 40px; 
+  width: 40px;
+}
+
+button:hover {
+  background-color: red;
+
+}
+
+h3 {
+  font-size: 13px;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+
+.calc {
+  background-color: black;
+  width: 40%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.screen {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 40px;
+  color: green;
+  border: 10px solid;
+  border-color: orange;
+  text-align: center;
+}
+
+.buttons {
+  color: black;
+  background-color: orange
+}
+

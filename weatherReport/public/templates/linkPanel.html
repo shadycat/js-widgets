@@ -1,0 +1,13 @@
+<div class="container order-mapping-container">
+  <div class="col-xs-12" data-ng-repeat="data in orderInfo">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <label class="panel-title">{{data[0].CategoryText }}</label>
+        </div>
+        <div  class="panel-body" data-ng-repeat="info in data">
+            <label>{{info.Key}}: </label>
+            <text>{{info.Value}}</text>
+        </div>
+    </div>
+  </div>
+</div>

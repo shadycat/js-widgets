@@ -1,0 +1,102 @@
+TIP: if you are not using webpack dev server it might not hot reload
+
+
+#I need to find a way to deep copy an object, that keeps 
+its functions methods
+  -Let me trying the jquery object copy method
+
+#_.cloneDeep (lodash)
+  -This was the winner
+#_underscore js clone (I use this now, and i cheat with map)
+#External clone deep library
+
+
+#Find a way to import external javascript files
+
+
+
+#I am having the same issue with, keyPress and keydown, it must be tied to and input field
+  -Solution I was able to allow react to listen to dom events and call functions based on those changes! this 
+  -is awesome! The magic is in the componentDidMount stuff
+
+  keyHandler: function(e) {
+    console.log("key is pressed")
+    console.log("key press detected as" + e.keyCode)
+    this.setState({playerAction: e.keyCode})
+    console.log("the new state is here");
+    console.log(this.state.playerAction);
+  },
+  clickHandler: function() {
+    console.log("I have been clicked");
+  },
+  componentDidMount: function() {
+    window.addEventListener('keydown', this.keyHandler);
+    var interval = setInterval(this.gameTick, 1000);
+    this.setState({interval: interval})
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener('keydown', this.keyHandler);
+  },
+
+
+#When merging react and redux togeather I had two errors 
+1.
+  -I had a container issue up front, the object I passed in was undefined
+    -the reducer must always return something even if it is the default state
+  -Then the mapStateToProps must always, return a plain javascript object, even use the { } for use
+
+
+#My movement is throwong undefined of unidefined
+  -This error is specifically caused by, (i think)
+    -BOTH indexes of the array being null
+    matrix[null][null]
+    -For some reason I was using newX and newY inside remove object
+    when I should not be using newX and newY in the remove object function
+
+
+  -In print tracing I have found the error here 
+  
+#Cannot ready property 50 of undefined
+  -this is because gameState.world is undefined
+  -The error is passing remove object gameState.world instead of game
+  state
+  -So the function down ticket are using gamestate.world.world
+
+#The Basic Game Kinda works now
+
+
+#I was getting an error were reducer was not defined i though i imported it correctly
+  -I just needed to npm install
+  -The run webpack again
+
+
+#grid size was not defined, because this was not in caps
+
+#Game reducer is not defined
+  -I CALLED IT GAM REDUXER
+  -ALso re-run webpack always
+  -separated your reducer import and dont use { }?
+  -separate it from you actions
+
+
+#Movement was jacked up
+  -I assigned rows as X, and columns by Y on accident
+  -I MESSED up the intuitive thing, UP means LESS Y values not Greater Y values
+
+#Fixed the attack, was not recognized
+  -Importing the interact method might need the attack method
+    -i dont think so because move is still valid
+  -to be added as well
+
+#Enemy attack was not defined, it was OpponentAttack and i switched it for a reason
+
+localhost/:16 Uncaught TypeError: (0 , _helperFunctions2.default) is not a function
+	In my imports I need to now the difference between
+	import Item from place vs import { item } from place
+
+
+#The board was rendering diagonally, and it was not refreshing despite changes
+-i need to clear my cache for it to work
+
+
+

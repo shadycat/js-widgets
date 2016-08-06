@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Twitch Feed </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src= "app/src/controllers/twitch.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/twitch.css">
+</head>
+
+<body>
+<div ng-app="twitchApp" ng-controller="TwitchCtrl as twitch">
+	<div class="wrapper">
+
+    <div class="feed">
+      <h1> Twitch Stream Monitor </h1>
+      <li ng-repeat="data in streamData">
+        <div class="streamPanel" ng-style="getStyle({{data.data.stream}})">
+
+          <div class="icon" ng-show="{{data.data.stream.channel.logo}}">
+            <img ng-src="{{data.data.stream.channel.logo}}"
+            style="max-height: 30px; max-height: 30px; border-radius: 50%;
+            border: 2px solid; border-color: white;">
+          </div>
+
+    			<td> {{data.data._links.channel}} </td>
+          <div class="gameStatus" ng-show="{{data.data.stream.channel.url}}">
+    			 <td> {{data.data.stream.channel.game}} </td>
+          </div>
+    			<td> {{displayLink(data.data.stream.channel.url)}} </td>
+          <div class="redirectButton" ng-show="{{data.data.stream.channel.url}}">
+      			<a href="{{data.data.stream.channel.url}}" class="btn btn-danger">
+            Go to Stream
+            </a>
+
+          </div>
+
+        </div>
+      </li>
+    </div>
+
+  </div>
+</body>
+<html>

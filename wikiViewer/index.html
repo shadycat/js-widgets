@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Wikipedia Searcher </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src= "app/src/controllers/wiki.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/wiki.css">
+</head>
+
+<body>
+  <div ng-app="wikiApp" ng-controller="WikiCtrl as wiki">
+    <div class="wrapper">
+
+      <div class="searchPanel"> 
+        <div class="searchBox" ng-class="{'searchOn' : !searchStatus}">
+          <h3> Search Wikipedia </h3>
+          <div class="searchBar">
+            <input class="search" type="text" ng-model="wiki.find">
+          </div>
+
+          <div class="buttonPanel">
+            <button id="search" class="btn btn-primary" ng-click="wiki.send(wiki)">Search Wikipedia!</button>
+            <form id="random" method="get" action="http://en.wikipedia.org/wiki/Special:Random">
+              <button id="randomButton" type="submit" class="btn btn-success">Random Page</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultPanel">
+        <ul ng-repeat="data in wikiData">
+          <div class="wikiPanel">
+            <br/>
+             {{data.title}} 
+            <br/>
+             {{data.snippet | html2text}}... 
+            <br/>
+            <a ng-href="http://en.wikipedia.org/{{data.title}}"> Read about {{data.title}} on Wikipedia! </a>
+          </div>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</body>
+<html>

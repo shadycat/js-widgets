@@ -1,0 +1,74 @@
+body {
+  background-image: url('https://i.ytimg.com/vi/0rgqRERcfF0/maxresdefault.jpg');
+}
+
+#search, #random {
+  display: inline-block;
+}
+
+.wrapper {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.buttonPanel {
+  text-align: center;
+}
+
+.searchBox {
+  text-align: center;
+  border: 1px solid;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 20%;
+  background: rgba(32,26,22,.9);
+  filter: blur(5px)
+}
+
+.searchBox h3 {
+  color: white;
+}
+
+.search {
+  width: 40%;
+  text-align: center;
+}
+
+
+#search, #random {
+  display: inline-block;
+}
+
+.resultPanel {
+  float: none;
+  color: white;
+}
+
+.resultPanel h3 {
+  color: white;
+}
+
+.wikiPanel {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 5px;
+  text-align: center;
+  border: solid;
+  border-radius: 25px;
+  background: rgba(32,26,22,.9);
+  filter: blur(5px)
+  color: white;
+}
+
+.searchOn {
+  text-align: center;
+  margin-top: 15%;
+  border-radius: 20px;
+  border-color: black;
+  background: rgba(32,26,22,.9);
+  filter: blur(5px)
+}
+
+.searchOn h3 {
+  color: white;
+}
